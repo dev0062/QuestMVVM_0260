@@ -3,6 +3,7 @@ package com.example.praktikum7_mvvm.view
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,6 +19,12 @@ fun FormSiswa(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
     modifier: Modifier = Modifier
 ){
+    //edit 2 : tambahkan 4 variable dibawah ini
+    var txtNama by rememberSaveable { mutableStateOf("") }
+    var txtAlamat by remember { mutableStateOf("") }
+    var txtGender by remember { mutableStateOf("") }
+    val listData: MutableList<String> = mutableListOf(txtNama, txtGender, txtAlamat)
+
     Scaffold(modifier = Modifier,
         { TopAppBar(title = { Text(stringResource(id = R.string.app_name), color = Color.White)},
             colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.purple_500))
