@@ -9,6 +9,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.praktikum7_mvvm.R
 import com.example.praktikum7_mvvm.model.Siswa
@@ -48,6 +49,13 @@ fun TampilSiswa(
                         Text(text = item.second, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     }
                     Divider(thickness = dimensionResource(R.dimen.thickness_divider))
+                }
+                Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onBackButtonClicked
+                ) {
+                    Text(stringResource(R.string.back))
                 }
             }
         }
